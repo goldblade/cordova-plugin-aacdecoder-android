@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="br.com.calangodev.aacdecoder" version="0.0.1">
+    <name>Aacdecoder</name>
+    <description>Cordova AAC Decoder Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,aacdecoder,streaming</keywords>
+    <js-module src="www/aacdecoder.js" name="aacdecoder">
+        <clobbers target="aacdecoder" />
+    </js-module>
+
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AacDecoder" >
+                <param name="android-package" value="br.com.calangodev.aacdecoder.AacDecoder"/>
+                <!--<param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener"/>-->
+            </feature>
+        </config-file>
+
+        <!--<source-file src="src/android/BatteryListener.java" target-dir="src/org/apache/cordova/batterystatus" />-->
+        <!--<source-file src="src/android/Foo.java" target-dir="src/com/alunny/foo" />-->
+        <!--<lib-file src="src/android/libs/arm64-v8a/libaacdecoder.so" arch="device" />-->
+        <source-file src="src/android/AacDecoder.java" target-dir="src/br/com/calangodev/aacdecoder"/>
+        <source-file src="src/android/PlayerCallbackService.java" target-dir="src/br/com/calangodev/aacdecoder" />
+        <source-file src="src/android/libs/arm64-v8a/libaacdecoder.so" target-dir="jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi/libaacdecoder.so" target-dir="jniLibs/armeabi/" />
+        <source-file src="src/android/libs/armeabi-v7a/libaacdecoder.so" target-dir="jniLibs/armeabi-v7a/" />
+        <source-file src="src/android/libs/mips/libaacdecoder.so" target-dir="jniLibs/mips/" />
+        <source-file src="src/android/libs/x86/libaacdecoder.so" target-dir="jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libaacdecoder.so" target-dir="jniLibs/x86_64/" />
+        <source-file src="src/android/libs/aacdecoder-android-0.8-SNAPSHOT.jar" target-dir="libs/" />
+        <!--<lib-file src="src/android/libs/aacdecoder-android-0.8-SNAPSHOT.jar" arch="device" />-->
+    </platform>
+
+</plugin>
