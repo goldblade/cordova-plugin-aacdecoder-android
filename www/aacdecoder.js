@@ -27,6 +27,12 @@ var aacdecoder = {
     readyState: function(successCallback, errorCallback) {
     	exec(successCallback, errorCallback, "AacDecoder", "readyState", []);
     },
+    stopMediaPlayer:function(){
+    	exec(null, null, "AacDecoder", "stopMediaPlayer", []);
+    },
+	diminuiVolume: function(){
+		exec(null, null, "AacDecoder", "diminuiVolume", []);
+	},
 };
 
 module.exports = aacdecoder;
